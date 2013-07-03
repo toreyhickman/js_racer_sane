@@ -1,0 +1,37 @@
+<% key_codes = (48..57).to_a.shuffle %>
+
+<div id="blocker"></div>
+<div id="begin_race">
+  <p>
+    Each player has been randomly assigned a key from 0-9.
+    <br>
+    Press the key assigned to your racer to move it toward the finish line.
+    <br><br><br>
+  </p>
+  <p class ="start">
+    begin the race
+  </p>
+</div>
+
+
+<div id="content">
+
+  <% @players.each do |player| %>
+
+    <div class="<%= player.id %>">
+      <div class="player_name"><h4><%= player.player_name %></h4></div>
+      <ol id="<%= player.id %>" class="<%= key_codes.pop %>">
+        <li class="active"></li>
+        <% 15.times do %>
+          <li></li>
+        <% end %>
+      </ol> 
+    </div>
+  <% end %>
+
+  <div id="notify_winner"></div>
+  <div class="reset hidden">play again</div>
+  
+</div>
+
+

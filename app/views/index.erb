@@ -1,0 +1,18 @@
+<div class="enter_names">
+
+  <h2>Enter Racers</h2>
+
+  <form action="/enter_race" method="post">
+    <input type="text" name="players[player_one]" placeholder="Player 1" 
+      value="<%=@player1.player_name if @player1 %>">
+
+      <br><br>
+
+    <input type="text" name="players[player_two]" placeholder="Player 2"
+      value="<%=@player2.player_name if @player2 %>">
+
+      <br><br>
+
+    <input type="submit">
+  </form>
+</div>
